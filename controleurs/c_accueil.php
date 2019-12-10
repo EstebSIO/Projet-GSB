@@ -15,7 +15,12 @@
  */
 
 if ($estConnecte) {
-    include 'vues/v_accueil.php';
+    if($_SESSION['role']=='C'){
+        include 'vues/v_accueilComptable.php';
+    }else{
+        include 'vues/v_accueil.php';
+    }
+    
 } else {
     include 'vues/v_connexion.php';
 }
