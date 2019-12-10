@@ -41,4 +41,13 @@ case 'voirEtatFrais':
     $nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
     $dateModif = dateAnglaisVersFrancais($lesInfosFicheFrais['dateModif']);
     include 'vues/v_etatFrais.php';
+case 'selectionnerVisiteur':
+    $lesVisiteurs = $pdo->getVisiteurs();
+    // Afin de sélectionner par défaut le dernier mois dans la zone de liste
+    // on demande toutes les clés, et on prend la première,
+    // les mois étant triés décroissants
+    $lesCles = array_keys($lesVisiteurs);
+    $visiteurASelectionner = $lesCles[0];
+    include 'vues/v_listeVisiteurs.php';
+    break;
 }
