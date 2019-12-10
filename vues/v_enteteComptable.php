@@ -48,13 +48,13 @@
                                     Accueil
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'gererFrais') { ?>class="active"<?php } ?>>
+                            <li <?php if ($uc == 'validerFrais') { ?>class="active"<?php } ?>>
                                 <a href="index.php?uc=validerFrais">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                     Validation fiche de frais
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
+                            <li <?php if ($uc == 'suiviPaiement') { ?>class="active"<?php } ?>>
                                 <a href="index.php?uc=suiviPaiement">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                     Suivi du paiement des fiches de frais
