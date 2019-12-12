@@ -112,7 +112,7 @@ class PdoGsb
             . 'FROM visiteur '
         );
         $requetePrepare->execute();
-        return $requetePrepare->fetch();
+        return $requetePrepare->fetchAll();
     }
 
     /**
