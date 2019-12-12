@@ -31,6 +31,7 @@
             <?php
             $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
             if ($estConnecte) {
+                if($_SESSION['role']!=='C'){
                 ?>
             <div class="header">
                 <div class="row vertical-align">
@@ -73,8 +74,11 @@
                 </div>
             </div>
             <?php
-            } else {
-                ?>   
+                }
+                
+                else{
+                    require'v_enteteComptable.php';
+                }    } else {?>   
                 <h1>
                     <img src="./images/logo.jpg"
                          class="img-responsive center-block"
