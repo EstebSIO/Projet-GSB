@@ -1,0 +1,13 @@
+{
+    "name": "vendor/g-s-b-appli-m-v-c",
+    "description": "Description of project GSB_AppliMVC.",
+    "authors": [
+        {
+            "name": "juju castou",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "twig/twig": "v2.6.0"
+    }
+}
