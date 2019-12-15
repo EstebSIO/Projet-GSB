@@ -53,28 +53,4 @@
         </select>
     </div>
 </div>
-<script type="text/javascript">
-    var visiteur = document.getElementById("lstVisiteur");
-    visiteur.addEventListener('change', function() {
-          hydrater();
-      });
-
-    function hydrater(){  
-        var idVisiteur = document.getElementById("lstVisiteur").value;
-        var lstMois = document.getElementById("lstMois");
-        lstMois.innerHTML='';
-        var Mois = [Math.random(), Math.random(), Math.random()]<?php /* 
-        $mois = $pdo->getLesMoisDisponibles();
-        echo json_encode($mois);*/ ?>;
-
-
-        for(var i = 0; i < Mois.length; i++) {
-            var opt = Mois[i];
-            var el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            lstMois.appendChild(el);
-        }
-    }
-
-</script>
+<script src="../js/remplirMois.js"></script>
