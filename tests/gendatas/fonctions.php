@@ -282,6 +282,32 @@ function updateMdpVisiteur($pdo)
 }
 
 /**
+ * Fonction qui crypte tout les mots de passe de la base de données pour ne pas stocker le mot de passe
+ * 
+ * @param type $pdo pour se connecter
+ *
+ * @return null
+ */
+function HashmdpVisiteur($pdo) {
+    $cipher ='AES-128-CBC';
+    $req = 'select * from visiteur';
+    $res = $pdo->query($req);
+    $lesLignes = $res->fetchAll();
+    foreach ($lesLignes as $unVisiteur) {
+        $id = $unVisiteur['id'];
+        $login = $unVisiteur['login'];
+        $mdp ="select mdp from visiteur where id = '$id'";
+        $mdp = $pdo->query($mdp);
+        $mdp = $mdp->fetch();
+        $mdp = $mdp[0];
+        $iv = "aaaaaaaaaaaaaaaa";
+        $mdp = openssl_encrypt($mdp,$cipher,$login,$options=0, $iv);
+        $crypt = "update visiteur set mdp ='$mdp' where visiteur.id ='$id'";
+        $pdo->exec($crypt);
+    }
+}
+
+/**
  * Fonction qui crée des lignes de frais hors forfait (via des INSERT SQL)
  *
  * @param PDO $pdo instance de la classe PDO utilisée pour se connecter

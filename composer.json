@@ -1,0 +1,14 @@
+{
+    "name": "vendor/g-s-b-appli-m-v-c",
+    "description": "Description of project GSB_AppliMVC.",
+    "authors": [
+        {
+            "name": "Esteban",
+            "email": "esteb.herbin@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "v2.9.0"
+    }
+}
