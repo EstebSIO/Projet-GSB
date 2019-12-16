@@ -20,6 +20,8 @@ case 'selectionnerVisiteur':
     $lesVisiteurs = $pdo->getVisiteurs();
     $lesCles = array_keys($lesVisiteurs);
     $visiteurASelectionner = $lesCles[0];
+    if (isset($_POST['idVisiteur'])){
+        $lesMois = $pdo->getLesMoisDisponibles($_POST['idVisiteur']);}
     include 'vues/v_validerFrais.php';
     break;
 }

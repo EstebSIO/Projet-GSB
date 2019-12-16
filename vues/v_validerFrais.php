@@ -47,9 +47,21 @@
     <div class="col-md-4">
         <h3>Sélectionner un mois : </h3>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" id="containerMois">
         <select id="lstMois" name="lstMois" class="form-control">
-            
+            <?php
+            if(is_array($lesMois)){
+                foreach ($lesMois as $unMois) {
+                    $idMois = $unMois['mois'];
+                    $mois = $unMois['numMois'];
+                    $annee = $unMois['numAnnee'];
+                       ?>
+                        <option value="<?php echo $idMois ?>">
+                            <?php echo $mois . "/" . $annee ?> </option>
+                        <?php
+                }
+            }
+            ?>
         </select>
     </div>
 </div>
