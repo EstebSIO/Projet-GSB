@@ -22,6 +22,7 @@
     </div>
     <div class="col-md-4">
         <select id="lstVisiteur" name="lstVisteur" class="form-control">
+            <option value="">--Selection--</option>
             <?php
             foreach ($lesVisiteurs as $unVisiteur) {
                 $idVisiteur = $unVisiteur['id'];
@@ -60,8 +61,7 @@
                             <?php echo $mois . "/" . $annee ?> </option>
                         <?php
                 }
-            }
-            ?>
+            }?>
         </select>
     </div>
 </div>

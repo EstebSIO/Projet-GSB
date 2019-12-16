@@ -448,15 +448,15 @@ class PdoGsb
         return $lesMois;
     }
     
-    public function getLesMoisCL($idVisiteur){
+    public function getLesMoisEtat($idVisiteur,$etat){
         $requetePrepare = PdoGSB::$monPdo->prepare(
             'SELECT fichefrais.mois AS mois FROM fichefrais '
             . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
-            . 'AND fichefrais.idetat = "CL" '
+            . 'AND fichefrais.idetat = :unEtat '
             . 'ORDER BY fichefrais.mois desc '
-
         );
         $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unEtat', $etat, PDO::PARAM_STR);
         $requetePrepare->execute();
         $lesMois = array();
         while ($laLigne = $requetePrepare->fetch()) {
