@@ -9,8 +9,10 @@
             url: 'http://gsb/?uc=valider&action=selectionnerVisiteur',
             data: data,
             success : function(response){
+                $('#lstMois').remove();
                 $('#containerMois').html($(response).find('#lstMois'));
-                remove($('#lstMois'));
+                
+                
             },
             error : function(){
                 console.log('error');
