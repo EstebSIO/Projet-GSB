@@ -53,4 +53,4 @@
         </select>
     </div>
 </div>
-<script src="../js/remplirMois.js"></script>
+<script src="./js/remplirMois.js"></script>
