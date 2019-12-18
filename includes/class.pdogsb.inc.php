@@ -96,12 +96,13 @@ class PdoGsb
         $iv = "aaaaaaaaaaaaaaaa";
         $requetePrepare = PdoGsb::$monPdo->prepare(
             'SELECT visiteur.id AS id, visiteur.nom AS nom, '
-            . 'visiteur.prenom AS prenom '
+            . 'visiteur.prenom AS prenom, '
+            . 'visiteur.role AS role '
             . 'FROM visiteur '
             . 'WHERE visiteur.login = :unLogin AND visiteur.mdp = :unMdp'
         );
          
-        $mdp = openssl_encrypt($mdp,$cipher,$login,$options=0, $iv);
+        //$mdp = openssl_encrypt($mdp,$cipher,$login,$options=0, $iv);
         $requetePrepare->bindParam(':unLogin', $login, PDO::PARAM_STR);
         $requetePrepare->bindParam(':unMdp', $mdp, PDO::PARAM_STR);
         $requetePrepare->execute();
